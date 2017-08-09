@@ -12,6 +12,8 @@
 		B1D973441F0C2EE400E15166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D973421F0C2EE400E15166 /* Main.storyboard */; };
 		B1D973461F0C2EE400E15166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D973451F0C2EE400E15166 /* Assets.xcassets */; };
 		B1D973491F0C2EE400E15166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D973471F0C2EE400E15166 /* LaunchScreen.storyboard */; };
+		B1D973521F0C312000E15166 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D973511F0C312000E15166 /* libsqlite3.tbd */; };
+		B1FA98A51F1DA28F001B02EB /* DBAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA98A41F1DA28F001B02EB /* DBAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		B1D973451F0C2EE400E15166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1D973481F0C2EE400E15166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1D9734A1F0C2EE400E15166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1D973511F0C312000E15166 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B1D973531F0C31C300E15166 /* RadioDataSQLite-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RadioDataSQLite-Bridging-Header.h"; sourceTree = "<group>"; };
+		B1FA98A41F1DA28F001B02EB /* DBAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D973521F0C312000E15166 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				B1D9733D1F0C2EE400E15166 /* RadioDataSQLite */,
-				B1D9733C1F0C2EE400E15166 /* Products */,
+				B1D973501F0C312000E15166 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,19 +55,31 @@
 				B1D9733B1F0C2EE400E15166 /* RadioDataSQLite.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B1D9733D1F0C2EE400E15166 /* RadioDataSQLite */ = {
 			isa = PBXGroup;
 			children = (
-				B1D9733E1F0C2EE400E15166 /* AppDelegate.swift */,
+				B1FA98A41F1DA28F001B02EB /* DBAccess.swift */,
 				B1D973401F0C2EE400E15166 /* ViewController.swift */,
+				B1D9733E1F0C2EE400E15166 /* AppDelegate.swift */,
 				B1D973421F0C2EE400E15166 /* Main.storyboard */,
 				B1D973451F0C2EE400E15166 /* Assets.xcassets */,
 				B1D973471F0C2EE400E15166 /* LaunchScreen.storyboard */,
 				B1D9734A1F0C2EE400E15166 /* Info.plist */,
+				B1D973531F0C31C300E15166 /* RadioDataSQLite-Bridging-Header.h */,
+				B1D9733C1F0C2EE400E15166 /* Products */,
 			);
 			path = RadioDataSQLite;
+			sourceTree = "<group>";
+		};
+		B1D973501F0C312000E15166 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1D973511F0C312000E15166 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +114,7 @@
 				TargetAttributes = {
 					B1D9733A1F0C2EE400E15166 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +157,7 @@
 			files = (
 				B1D973411F0C2EE400E15166 /* ViewController.swift in Sources */,
 				B1D9733F1F0C2EE400E15166 /* AppDelegate.swift in Sources */,
+				B1FA98A51F1DA28F001B02EB /* DBAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +282,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RadioDataSQLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jdiczhazy.RadioDataSQLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RadioDataSQLite/RadioDataSQLite-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,10 +297,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RadioDataSQLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jdiczhazy.RadioDataSQLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RadioDataSQLite/RadioDataSQLite-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -301,6 +326,7 @@
 				B1D9734F1F0C2EE400E15166 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
